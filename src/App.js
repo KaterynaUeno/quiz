@@ -13,7 +13,7 @@ const App = () => {
   };
   return (
     <div className="App">
-      < step === 1 && Start start={start} />
+      {step === 1 && <Start start={start} />}
       <Qestion />
     </div>
   );
