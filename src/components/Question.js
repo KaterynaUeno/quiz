@@ -1,7 +1,14 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./styleStart.css";
 
-const Question = () => {
+const Question = ({
+  data,
+  onAnswerUpdate,
+  numberOfQuestions,
+  activeQuestion,
+  onSetActiveQuestion,
+  onSetStep,
+}) => {
   const nextClick = (e) => {};
   return (
     <div className="card">
