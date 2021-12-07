@@ -1,0 +1,25 @@
+.card {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+.btn {
+  color: white;
+  background-color: rgb(39, 27, 147);
+}
+
+.btn:hover {
+  color: blue;
+  background-color: white;
+}
+
+.label {
+  display: block;
+  text-align: left;
+  padding: 3px;
+  padding-left: 5px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  background-color: rgb(176, 172, 212);
+}
