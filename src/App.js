@@ -1,14 +1,15 @@
 import "./App.css";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import data from "./data";
 import Start from "./components/Start";
 import Question from "./components/Question";
 import Result from "./components/Result";
-import FinalResults from "./components/FinalResults";
+import Modal from "./components/Modal";
 const App = () => {
   const [step, setStep] = useState(1);
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [answer, setAnswer] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   const start = () => {
     setStep(2);
@@ -37,10 +38,12 @@ const App = () => {
           results={answer}
           data={data}
           startAgain={startAgain}
-          checkAnswers={() => <FinalResults />}
+          checkAnswers={() => setShowModal(true)}
         />
       )}
-      {step === 4 && <FinalResults results={answer} data={data} />}
+      {showModal && (
+        <Modal close={() => setShowModal(false)} results={answer} data={data} />
+      )}
     </div>
   );
 };
