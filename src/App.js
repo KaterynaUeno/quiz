@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect, useRef } from "react";
-import { data } from "./quizData";
+import data from "./data";
 import Start from "./components/Start";
 import Qestion from "./components/Question";
 const App = () => {
@@ -14,7 +14,16 @@ const App = () => {
   return (
     <div className="App">
       {step === 1 && <Start start={start} />}
-      <Qestion />
+      {step === 2 && (
+        <Qestion
+          data={data[activeQuestion]}
+          onAnswer={setAnswer}
+          numberOfQuestions={data.length}
+          activeQuestion={activeQuestion}
+          onSetActiveQuestion={setActiveQuestion}
+          onSetStep={setStep}
+        />
+      )}
     </div>
   );
 };

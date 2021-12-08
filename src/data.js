@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     question: "What is the capital of Croatia ?",
     choices: ["Split", "Osijek", "Zagreb", "Rijeka"],
@@ -45,3 +45,4 @@ export const data = [
     answer: "Berlin",
   },
 ];
+export default data;
