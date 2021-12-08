@@ -19,6 +19,7 @@ const App = () => {
     setActiveQuestion(0);
     setAnswer([]);
     setStep(1);
+    setShowModal(false);
   };
   return (
     <div className="App">
