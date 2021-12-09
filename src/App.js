@@ -5,12 +5,15 @@ import Start from "./components/Start";
 import Question from "./components/Question";
 import Result from "./components/Result";
 import Modal from "./components/Modal";
+
 const App = () => {
   const [step, setStep] = useState(1);
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [answer, setAnswer] = useState([]);
-  const [showModal, setShowModal] = useState(false);
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const start = () => {
     setStep(2);
   };
@@ -19,7 +22,7 @@ const App = () => {
     setActiveQuestion(0);
     setAnswer([]);
     setStep(1);
-    setShowModal(false);
+    setShow(false);
   };
   return (
     <div className="App">
@@ -39,11 +42,17 @@ const App = () => {
           results={answer}
           data={data}
           startAgain={startAgain}
-          checkAnswers={() => setShowModal(true)}
+          checkAnswers={() => setShow(true)}
         />
       )}
-      {showModal && (
-        <Modal close={() => setShowModal(false)} results={answer} data={data} />
+      {show && (
+        <Modal
+          close={() => setShow(false)}
+          results={answer}
+          data={data}
+          handleClose={handleClose}
+          handleShow={handleShow}
+        />
       )}
     </div>
   );
