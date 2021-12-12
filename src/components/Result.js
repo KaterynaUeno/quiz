@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import AnotherModal from "./AnotherModal";
 
 const Result = ({ data, results, startAgain, checkAnswers }) => {
   const [correctAnswers, setCorrectAnswers] = useState(0);
+
   useEffect(() => {
     let correctAnswer = 0;
     results.forEach((result, index) => {
@@ -19,8 +21,8 @@ const Result = ({ data, results, startAgain, checkAnswers }) => {
           <p>
             {correctAnswers} of {data.length}
           </p>
-          <button className="btn" onClick={checkAnswers}>
-            Check your answers
+          <button class="btn" onClick={checkAnswers}>
+            Check answers
           </button>
           <button className="btn" onClick={startAgain}>
             Start again

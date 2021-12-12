@@ -34,3 +34,17 @@
   font-size: 20px;
   padding-bottom: 10px;
 }
+
+p .orange {
+  color: orange;
+  font-size: 15px;
+}
+
+p .green {
+  color: green;
+  font-size: 15px;
+}
+
+h5 {
+  font-size: 15px;
+}
